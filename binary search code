@@ -1,0 +1,17 @@
+# 5. Binary Search
+def binary_search(values, target):
+    low, high = 0, len(values) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if values[mid] == target:
+            return mid
+        if values[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+values = [10, 13, 14, 29, 37]      # must be sorted
+target = 37
+print(binary_search(values, target))   # 4
+print(binary_search(values, 99))       # -1
